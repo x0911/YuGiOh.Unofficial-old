@@ -63,7 +63,8 @@ export default {
   },
   methods: {
     startDownload() {
-      this.$socket.client.emit("startDownload", true);
+      // this.$socket.client.emit("startDownload", true);
+      this.$socket.client.emit("resizeImages", true);
     },
     getFullNumber() {}
   }

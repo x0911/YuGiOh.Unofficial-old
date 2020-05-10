@@ -56,7 +56,15 @@
               </v-list-item-content>
             </v-list-item>
             <v-divider></v-divider>
-            <div class="mt-2" v-text="card.desc"></div>
+            <div
+              class="mt-2"
+              v-html="
+                card.desc.replace(
+                  '----------------------------------------',
+                  '<br><hr class=my-1>'
+                )
+              "
+            ></div>
           </v-card-text>
         </div>
         <div v-else class="text-center">

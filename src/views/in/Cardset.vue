@@ -76,24 +76,47 @@
       <v-card-text v-if="cards">
         <v-tabs-items v-model="cardset_tab">
           <v-tab-item>
-            <div v-if="selected_deck">
-              <div v-if="current_deck.length > 0">
-                <template v-for="(card, i) in current_deck">
-                  <yugioh-card
-                    @card_updated="selected_deck_changed"
-                    :deck_id="selected_deck ? selected_deck.id : null"
-                    :where_iam="'main'"
-                    :card="card"
-                    :key="i"
-                  ></yugioh-card>
-                </template>
+            <div v-if="cardset_tab == 0">
+              <div v-if="selected_deck">
+                <div v-if="current_deck.length > 0">
+                  <template v-for="(card, i) in current_deck">
+                    <yugioh-card
+                      @card_updated="selected_deck_changed"
+                      :deck_id="selected_deck ? selected_deck.id : null"
+                      :where_iam="'main'"
+                      :card="card"
+                      :key="i"
+                    ></yugioh-card>
+                  </template>
+                </div>
+                <div class="text-center pt-6" v-else>
+                  <div class="mb-4">
+                    <v-img
+                      class="d-inline-block"
+                      width="150"
+                      :src="require('@/cards/backface.png')"
+                    >
+                      <template v-slot:placeholder>
+                        <v-layout fill-height align-center justify-center ma-0>
+                          <v-progress-circular
+                            indeterminate
+                            color="primary"
+                          ></v-progress-circular>
+                        </v-layout>
+                      </template>
+                    </v-img>
+                  </div>
+                  <div class="subtitle-1">
+                    No Cards in your main deck
+                  </div>
+                </div>
               </div>
               <div class="text-center pt-6" v-else>
                 <div class="mb-4">
                   <v-img
                     class="d-inline-block"
-                    width="150"
-                    :src="require('@/cards/backface.png')"
+                    width="300"
+                    :src="require('@/assets/inapp/select_option.svg')"
                   >
                     <template v-slot:placeholder>
                       <v-layout fill-height align-center justify-center ma-0>
@@ -106,51 +129,53 @@
                   </v-img>
                 </div>
                 <div class="subtitle-1">
-                  No Cards in your main deck
+                  Please select a deck to view
                 </div>
-              </div>
-            </div>
-            <div class="text-center pt-6" v-else>
-              <div class="mb-4">
-                <v-img
-                  class="d-inline-block"
-                  width="300"
-                  :src="require('@/assets/inapp/select_option.svg')"
-                >
-                  <template v-slot:placeholder>
-                    <v-layout fill-height align-center justify-center ma-0>
-                      <v-progress-circular
-                        indeterminate
-                        color="primary"
-                      ></v-progress-circular>
-                    </v-layout>
-                  </template>
-                </v-img>
-              </div>
-              <div class="subtitle-1">
-                Please select a deck to view
               </div>
             </div>
           </v-tab-item>
           <v-tab-item>
-            <div v-if="selected_deck">
-              <div v-if="current_side.length > 0">
-                <template v-for="(card, i) in current_side">
-                  <yugioh-card
-                    @card_updated="selected_deck_changed"
-                    :deck_id="selected_deck ? selected_deck.id : null"
-                    :where_iam="'side'"
-                    :card="card"
-                    :key="i"
-                  ></yugioh-card>
-                </template>
+            <div v-if="cardset_tab == 1">
+              <div v-if="selected_deck">
+                <div v-if="current_side.length > 0">
+                  <template v-for="(card, i) in current_side">
+                    <yugioh-card
+                      @card_updated="selected_deck_changed"
+                      :deck_id="selected_deck ? selected_deck.id : null"
+                      :where_iam="'side'"
+                      :card="card"
+                      :key="i"
+                    ></yugioh-card>
+                  </template>
+                </div>
+                <div class="text-center pt-6" v-else>
+                  <div class="mb-4">
+                    <v-img
+                      class="d-inline-block"
+                      width="150"
+                      :src="require('@/cards/backface.png')"
+                    >
+                      <template v-slot:placeholder>
+                        <v-layout fill-height align-center justify-center ma-0>
+                          <v-progress-circular
+                            indeterminate
+                            color="primary"
+                          ></v-progress-circular>
+                        </v-layout>
+                      </template>
+                    </v-img>
+                  </div>
+                  <div class="subtitle-1">
+                    No Cards in your side deck
+                  </div>
+                </div>
               </div>
               <div class="text-center pt-6" v-else>
                 <div class="mb-4">
                   <v-img
                     class="d-inline-block"
-                    width="150"
-                    :src="require('@/cards/backface.png')"
+                    width="300"
+                    :src="require('@/assets/inapp/select_option.svg')"
                   >
                     <template v-slot:placeholder>
                       <v-layout fill-height align-center justify-center ma-0>
@@ -163,42 +188,19 @@
                   </v-img>
                 </div>
                 <div class="subtitle-1">
-                  No Cards in your side deck
+                  Please select a deck to view
                 </div>
-              </div>
-            </div>
-            <div class="text-center pt-6" v-else>
-              <div class="mb-4">
-                <v-img
-                  class="d-inline-block"
-                  width="300"
-                  :src="require('@/assets/inapp/select_option.svg')"
-                >
-                  <template v-slot:placeholder>
-                    <v-layout fill-height align-center justify-center ma-0>
-                      <v-progress-circular
-                        indeterminate
-                        color="primary"
-                      ></v-progress-circular>
-                    </v-layout>
-                  </template>
-                </v-img>
-              </div>
-              <div class="subtitle-1">
-                Please select a deck to view
               </div>
             </div>
           </v-tab-item>
           <v-tab-item>
-            <template v-for="n in limit">
-              <yugioh-card
-                @card_updated="testalert"
+            <div v-if="cardset_tab == 2">
+              <yugioh-collection
+                :cards="cards"
                 :deck_id="selected_deck ? selected_deck.id : null"
                 :where_iam="'all_cards'"
-                :card="cards[n]"
-                :key="n"
-              ></yugioh-card>
-            </template>
+              ></yugioh-collection>
+            </div>
           </v-tab-item>
         </v-tabs-items>
       </v-card-text>
@@ -209,13 +211,16 @@
 
 <script>
 export default {
+  components: {
+    YugiohCollection: () => import("@/components/global/yugioh-collection.vue")
+  },
   name: "my-cardset",
   mounted() {
     this.fetchCards();
     this.fetchDecks();
   },
   data: () => ({
-    limit: 100,
+    limit: 1000,
     decks: [],
     cards: [],
     current_deck: [],
