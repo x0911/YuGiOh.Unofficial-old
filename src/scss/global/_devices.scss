@@ -1,0 +1,108 @@
+@media screen and (min-width: 1264px) {
+  // Large and Extra Large
+  .display-4:not(.all-sizes) {
+    line-height: 1.2 !important;
+  }
+}
+
+// @media screen and (max-width: 1920px) {
+//   .container {
+//     max-width: 1200px;
+//   }
+// }
+
+.v-app-bar.contained {
+  .v-toolbar__content {
+    margin: auto auto;
+    border-bottom: 1px solid #ffffff;
+    @media screen and (min-width: 960px) {
+      max-width: 900px;
+    }
+    @media screen and (min-width: 1264px) {
+      max-width: 1185px;
+    }
+    @media screen and (min-width: 1904px) {
+      max-width: 1785px;
+    }
+    // @media screen and (max-width: 1920px) {
+    //   max-width: 1200px;
+    // }
+  }
+}
+
+@media screen and (max-width: 1263px) {
+  // Medium Screens
+  .v-application {
+    .headline {
+      font-size: 23px !important;
+      &.line-height-enhance {
+        line-height: 35px !important;
+      }
+    }
+    .display-2:not(.all-sizes) {
+      font-size: 35px !important;
+      line-height: 40px !important;
+    }
+    .display-3:not(.all-sizes) {
+      font-size: 50px !important;
+      line-height: 1.2 !important;
+    }
+    .display-4:not(.all-sizes) {
+      line-height: 1.2 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  // Small Screens
+  .v-application {
+    .headline {
+      font-size: 21px !important;
+      &.line-height-enhance {
+        line-height: 33px !important;
+      }
+    }
+    .display-2:not(.all-sizes) {
+      font-size: 34px !important;
+      line-height: 39px !important;
+    }
+    .display-4:not(.all-sizes) {
+      font-size: 75px !important;
+      line-height: 1 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  // Extar Small Screens
+  .v-application {
+    .headline {
+      font-size: 18px !important;
+      &.line-height-enhance {
+        line-height: 30px !important;
+      }
+      &.small {
+        font-size: 18px !important;
+      }
+    }
+    .display-1:not(.all-sizes) {
+      font-size: 25px !important;
+      line-height: 30px !important;
+    }
+    .display-2:not(.all-sizes) {
+      font-size: 32px !important;
+      line-height: 38px !important;
+    }
+    .display-3:not(.all-sizes) {
+      font-size: 38px !important;
+      line-height: 40px !important;
+    }
+    .display-4:not(.all-sizes) {
+      font-size: 40px !important;
+      line-height: 40px !important;
+    }
+    .layout.pt-5 {
+      padding-top: 15px !important;
+    }
+  }
+}

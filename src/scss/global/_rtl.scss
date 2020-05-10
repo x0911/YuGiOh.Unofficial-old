@@ -1,0 +1,156 @@
+// Things not in the application
+body.body-ar {
+  #nprogress {
+    .spinner {
+      right: auto;
+      left: 15px;
+    }
+  }
+}
+
+.v-application {
+  $numbers: 1, 2, 3, 4, 5;
+  .rotateOnLangNigative {
+    transform: rotateY(180deg);
+  }
+  &.v-application--is-rtl {
+    .v-toolbar__content > .v-tabs:last-child,
+    .v-toolbar__extension > .v-tabs:last-child {
+      margin-right: auto;
+      margin-left: -16px;
+    }
+    .v-list__tile__title {
+      // font-weight: bold;
+    }
+    .v-list-item {
+      .v-list-item__avatar:first-child {
+        margin-right: auto;
+        margin-left: 20px;
+      }
+    }
+    .v-toolbar__side-icon {
+      margin-left: 6px;
+    }
+    .headline {
+      line-height: 40px !important;
+      &.small {
+      }
+    }
+    .v-btn {
+      // font-weight: bold;
+    }
+    .add-patient-button {
+      right: auto;
+      left: 30px;
+    }
+    @each $number in $numbers {
+      .pt-rtl-#{$number} {
+        padding-top: #{$number * 4}px !important;
+      }
+    }
+    .v-input__prepend-inner {
+      padding-left: 10px;
+      padding-right: 0;
+      margin-left: auto;
+    }
+    .v-alert__icon {
+      margin-left: 16px;
+      margin-right: auto;
+    }
+    @media (min-width: 0) {
+      th.text-xs-left {
+        text-align: right !important;
+      }
+    }
+    th.column.sortable {
+      i.v-icon {
+        margin-left: auto;
+        margin-right: 5px;
+      }
+    }
+    ul.v-expansion-panel {
+      li.v-expansion-panel__container {
+        text-align: right;
+        .v-expansion-panel__header {
+          line-height: 24px;
+        }
+      }
+    }
+
+    .v-card {
+      .v-card__text {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+    // rtl
+    .rotateOnLang {
+      transform: rotateY(180deg);
+    }
+    .rotateOnLangNigative {
+			transform: rotateY(0deg);
+		}
+    // .mediumOnLang {
+    //   font-weight: 600 !important;
+    // }
+    // .boldOnLang {
+    //   font-weight: 700 !important;
+    // }
+    div[data-page="home"] {
+      #workflow-container {
+        ._3dparent {
+          .phone {
+            transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1)
+              scaleY(1) scaleZ(1) rotateX(0.0024deg) rotateY(15deg)
+              rotateZ(0deg) skewX(0deg) skewY(0deg);
+          }
+        }
+      }
+    }
+    .v-text-field,
+    .v-text-field.dialog-text-field {
+      .v-label--active {
+        left: auto !important;
+        right: -44px !important;
+      }
+    }
+    .v-btn-toggle {
+      > .v-btn.v-btn:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+      }
+      > .v-btn.v-btn:last-child {
+        border-left-width: thin;
+        border-right-width: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+      }
+      &.v-btn-toggle--shaped {
+        border-radius: 4px 24px;
+      }
+    }
+
+    // Allow reversing shaped class
+    .shaped-reverse {
+      .v-treeview-node.v-treeview-node--shaped .v-treeview-node__root,
+      .v-treeview-node.v-treeview-node--shaped .v-treeview-node__root:before {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-right-radius: 24px !important;
+        border-top-right-radius: 24px !important;
+      }
+    }
+
+    // Fix prominent alert icon
+    .v-alert--prominent {
+      .v-alert__icon {
+        margin-left: 16px;
+        margin-right: 8px;
+      }
+    }
+  } // End of .v-application
+}

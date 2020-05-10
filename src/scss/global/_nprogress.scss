@@ -1,0 +1,12 @@
+#nprogress {
+  .bar {
+    height: 4px;
+  }
+  .spinner {
+    top: 80px;
+    .spinner-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.v-application {
+  .notis-sidebar {
+    .v-skeleton-loader {
+      .v-skeleton-loader__list-item-avatar-three-line {
+        .v-skeleton-loader__avatar {
+          margin-right: 20px !important;
+          height: 45px !important;
+          width: 45px !important;
+        }
+      }
+    }
+  }
+  &.v-application--is-rtl {
+    .notis-sidebar {
+      .v-skeleton-loader {
+        .v-skeleton-loader__list-item-avatar-three-line {
+          .v-skeleton-loader__avatar {
+            margin-right: auto !important;
+            margin-left: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.lottie {
+  $colors: (
+    white: white,
+    grey: grey,
+    primary: #1976D2,
+    primback: #041524,
+    secondary: #424242,
+    anchor: #1976D2,
+    accent: #82B1FF,
+    error: #FF5252,
+    info: #2196F3,
+    success: #4CAF50,
+    warning: #FFC107,
+    purple: purple
+  );
+  @each $key, $color in $colors {
+    &.svg-#{""+$key} {
+      svg * {
+        fill: $color;
+        stroke: $color;
+      }
+      @for $i from 1 through 5 {
+        &.darken-#{$i} {
+          svg * {
+            fill: darken($color, $i * 10%);
+            stroke: darken($color, $i * 10%);
+          }
+        }
+      }
+    }
+  }
+  @for $i from 1 through 5 {
+    &.stroke-#{$i} {
+      * {
+        stroke-width: $i;
+      }
+    }
+  }
+}
+
+.v-list-item--active {
+  .lottie {
+    svg {
+      * {
+        fill: #1976D2 !important;
+        stroke: #1976D2 !important;
+      }
+    }
+  }
+}

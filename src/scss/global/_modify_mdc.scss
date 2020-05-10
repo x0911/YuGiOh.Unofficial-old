@@ -1,0 +1,180 @@
+* {
+  font-family: "Poppins", "Roboto", "Cairo", sans-serif;
+}
+body {
+  font-family: "Poppins", "Roboto", "Cairo", sans-serif !important;
+  line-height: 1.5;
+  .v-application {
+    font-family: "Poppins", "Roboto", "Cairo", sans-serif !important;
+    line-height: 1.5;
+    .font-weight-simibold {
+      font-weight: 600 !important;
+    }
+    // List Items
+    .v-list-item.wrap {
+      .v-list-item__content {
+        .v-list-item__title,
+        .v-list-item__subtitle {
+          white-space: initial;
+        }
+      }
+    }
+    // Vue2-Editor
+    .quillWrapper {
+      .ql-container,
+      .ql-toolbar {
+        font-family: "Poppins", "Roboto", "Cairo", sans-serif !important;
+        .ql-editor {
+          direction: auto;
+        }
+      }
+    }
+    $numbers: 1, 2, 3, 4, 5;
+    $typos: "headline", "title", "subheading", "body-1", "body-2", "caption",
+      "v-list-item__title", "blockquote", "v-chip";
+    @for $i from 1 through 4 {
+      .display-#{$i} {
+        font-family: "Poppins", "Roboto", "Cairo", sans-serif !important;
+      }
+    }
+    @each $typo in $typos {
+      .#{$typo} {
+        font-family: "Poppins", "Roboto", "Cairo", sans-serif !important;
+      }
+    }
+    // .v-card:not(.normal-card):not(.v-select-list) {
+    //     // background: #fff;
+    //     border-radius: 8px;
+    //     border: 1px solid #eceff1;
+    //     box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    //     margin: 0 auto 20px;
+    //     max-width: 1280px;
+    //     overflow: hidden;
+    //     .card-body {
+    //         padding: 30px 25px;
+    //     }
+    //     .v-card__text {
+    //         line-height: 23px;
+    //     }
+    // }
+    .headline {
+      &.line-height-enhance {
+        line-height: 35px !important;
+      }
+      &.small {
+        font-size: 20px !important;
+      }
+    }
+    @media screen and (max-width: 599px) {
+      @each $number in $numbers {
+        .px-xs-#{$number} {
+          padding-left: #{$number * 3}px;
+          padding-right: #{$number * 3}px;
+        }
+        // .py-xs-#{$number} {
+        //     padding-top: #{$number*3}px;
+        //     padding-bottom: #{$number*3}px;
+        // }
+      }
+    }
+    .v-text-field {
+      .v-input__prepend-inner {
+        padding-right: 10px;
+      }
+      &.has-file-input {
+        .v-input__append-outer {
+          display: none;
+        }
+      }
+      &.two-outers.v-text-field--enclosed.v-input--dense:not(.v-text-field--solo).v-text-field--single-line .v-input__append-outer {
+        margin-top: -8px;
+      }
+    }
+
+    ul.v-expansion-panel {
+      li.v-expansion-panel__container {
+        padding: 5px 0;
+      }
+    }
+
+    .v-list:not(.dense) {
+      .v-list-item {
+        .v-list-item__title,
+        .v-list-item__subtitle {
+          line-height: 20px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+    .v-list-item {
+      .v-list-item__avatar:first-child {
+        margin-right: 20px;
+      }
+    }
+    .v-text-field.dialog-text-field {
+      .v-label--active {
+        left: -34px !important;
+      }
+    }
+    // Reset Text-Transform
+    .text-none {
+      text-transform: none;
+    }
+
+    // Increase textarea line height
+    .v-textarea {
+      textarea {
+        line-height: 1.4;
+      }
+    }
+
+    // Fix Avatar overflow
+    .v-avatar {
+      overflow: visible;
+    }
+
+    // Fix [hint]v-messages line-height
+    .v-messages {
+      .v-messages__wrapper {
+        .v-messages__message {
+          line-height: 1.5;
+        }
+      }
+    }
+
+    // Fix prominent alert icon
+    .v-alert--prominent {
+      .v-alert__icon {
+        height: 35px;
+        min-width: 35px;
+        align-self: flex-start;
+        margin-left: 8px;
+        .v-icon {
+          font-size: 30px;
+        }
+      }
+    }
+
+    // Fix v-tabs that needs a v-divider under tabs
+    .v-tabs.has-divider {
+      .v-slide-group__wrapper {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
+    // Fix app-bar background color
+    .theme--light.v-app-bar.v-toolbar.v-sheet {
+      background-color: #fff;
+    }
+
+    // Theme Dark Fixes
+    &.theme--dark {
+      .v-tabs.has-divider {
+        .v-slide-group__wrapper {
+          border-bottom: 1px solid #444;
+        }
+      }
+    }
+  }
+}

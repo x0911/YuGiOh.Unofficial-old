@@ -1,0 +1,21 @@
+// Top app bar
+
+.v-application {
+  @media screen and (min-width: 600px) {
+    .v-toolbar__content > .v-tabs:first-child,
+    .v-toolbar__extension > .v-tabs:first-child {
+      margin-left: 55px;
+    }
+  }
+}
+
+// Side app bar
+
+.v-application {
+  .v-navigation-drawer--mini-variant {
+    .v-list-item > :first-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

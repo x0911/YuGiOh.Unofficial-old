@@ -1,0 +1,20 @@
+{
+  "name": "yugioh-unofficial-server",
+  "version": "1.0.0",
+  "description": "The server of the YuGiOh-Unofficial game, Works locally and RedHated!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yugioh",
+    "trading-card-game"
+  ],
+  "author": "Hamdi Mohamed",
+  "dependencies": {
+    "express": "^4.17.1",
+    "image-downloader": "^3.5.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {}
+}

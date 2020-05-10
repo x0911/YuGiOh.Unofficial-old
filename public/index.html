@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <!-- Main Language is Arabic -->
+  <head>
+    <!-- Character Set - To be able to use Arabic -->
+    <meta charset="utf-8" />
+    <!-- Short description for the app -->
+    <meta name="description" content="Multiplayer-first trading card game, YuGiOh." />
+    <!-- Preloader styles -->
+    <link rel="stylesheet" href="<%= BASE_URL %>preloader.css" />
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="<%= BASE_URL %>manifest.json" />
+    <!-- Main Color in Schema -->
+    <meta name="theme-color" content="#1976d2" />
+    <!-- Simulate an HTTP response header -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Make it responsive - Define user's visible area  -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <!-- App Icon -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <!-- App Name -->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      // Pass App Version to Vue.js
+      window.app_version = "<%= htmlWebpackPlugin.options.version %>";
+    </script>
+  </head>
+  <body>
+    <!-- Military Custom Preloader -->
+    <div id="app-preloader">
+      <div class="preloader-container">
+        <div class="image-container">
+          <img src="<%= BASE_URL %>logo.png" alt="Slifer The Sky Dragon">
+        </div>
+      </div>
+    </div>
+    <!-- If Javascript is not enabled -->
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

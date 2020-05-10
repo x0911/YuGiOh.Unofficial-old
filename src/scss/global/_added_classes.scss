@@ -1,0 +1,158 @@
+.full-width {
+  width: 100%;
+}
+.height-100vh {
+  min-height: 100vh;
+}
+
+.add-patient-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 4;
+}
+
+.grecaptcha-badge {
+  // display: none !important;
+  z-index: -1;
+}
+
+.margin-inside-cards {
+  .v-card.inside-card {
+    margin-bottom: 1rem;
+  }
+}
+
+.absolute-menu-vert-parent {
+  position: relative;
+  .absolute-menu-vert {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(0%, -50%);
+  }
+}
+
+.panel-no-elevation.v-expansion-panels {
+  .v-expansion-panel {
+    &:before {
+      box-shadow: none;
+      border: 0;
+    }
+  }
+}
+
+// Line Heights
+$line_heights: 1, 2, 3, 4, 5, 6;
+@each $i in $line_heights {
+  .line-height-#{$i} {
+    line-height: #{$i}rem !important;
+  }
+  .line-height-x#{$i} {
+    line-height: #{($i + ($i + 1)) / 2}rem !important;
+  }
+}
+
+// Front
+.v-avatar.avatar-front {
+  .v-icon {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 4em !important;
+  }
+  &.center {
+    .v-icon {
+      top: 50%;
+      font-size: 2.5em !important;
+    }
+  }
+  &.top {
+    .v-icon {
+      top: 0%;
+    }
+  }
+}
+.text--front {
+  color: #77838f;
+}
+
+.filter-grey {
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.5s linear;
+  &.no-opacity {
+    filter: grayscale(100%) opacity(1);
+  }
+  &:hover {
+    filter: grayscale(0) opacity(1);
+  }
+}
+
+// Letter Spacing
+@for $i from 0 through 5 {
+  .ls-#{$i} {
+    letter-spacing: #{$i}px;
+  }
+}
+
+// Word Braking
+.break-word {
+  word-break: break-word !important;
+}
+
+// Rotations
+
+$rotations: "Y", "X";
+
+@each $i in $rotations {
+  .rotate#{$i} {
+    transform: rotate#{$i }(180deg);
+  }
+}
+
+// Floats
+.clearfix {
+  clear: both;
+}
+
+// Remove the responsive sizer from images
+.no-sizer {
+  .v-responsive__sizer {
+    display: none;
+  }
+}
+
+// Text field with button as append
+.v-text-field--rounded.append-with-button {
+  > .v-input__control {
+      > .v-input__slot {
+          padding-right: 0px !important;
+          .v-input__append-inner {
+              margin: 0 !important;
+              padding: 0 !important;
+              // padding-top: 4px !important;
+              height: 56px;
+              .v-btn {
+                  height: inherit;
+              }
+          }
+      }
+  }
+}
+
+// v-btn
+.v-btn {
+  text-transform: none !important;
+}
+
+// Allow reversing shaped class
+.shaped-reverse {
+  .v-treeview-node.v-treeview-node--shaped .v-treeview-node__root, .v-treeview-node.v-treeview-node--shaped .v-treeview-node__root:before {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 24px !important;
+    border-top-left-radius: 24px !important;
+  }
+}

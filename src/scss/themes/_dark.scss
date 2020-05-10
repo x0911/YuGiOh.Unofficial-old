@@ -1,0 +1,8 @@
+.v-application.theme--dark {
+  .primary:not(.v-chip--outlined):not(.v-btn--outlined) {
+    color: #000 !important;
+  }
+  .error, .success, .girly {
+    color: #fff !important;
+  }
+}

@@ -1,0 +1,39 @@
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+}
+
+#fireworks_canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.congrats-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  background: rgba(25, 118, 210, 0.7);
+}
+
+th.column.sortable {
+  i.v-icon {
+    margin-left: 5px;
+  }
+}
+
+// Rotates
+.rotate-45 {
+  transform: rotate(45deg);
+}
